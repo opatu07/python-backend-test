@@ -59,7 +59,29 @@ Docker + FastAPI + Supabaseの環境構築が行えたかを確認できます�
    python supabase_test.py
    ```
 
-## 注意事項
 
+7. **`backend.py` の動作確認（Docker コンテナ内）**
+
+   コンテナ環境で確認する場合の手順です。コンテナに入ってから `requirements.txt` をインストール済みであることを確認し、`backend.py` を実行します。
+
+   ```bash
+   # コンテナに入る
+   docker compose exec python bash
+
+   # backend.py があるか確認
+   ls 
+
+   # backend.pyを実行
+   python3 backend.py
+   ```
+
+注意1: `backend.py` は実行時のカレントディレクトリに依存して `oct.pdf` を探します。PDF の場所が異なる場合は `backend.py` 内の `INPUT_PDF` を適切に修正してください。
+
+注意2:「=== PDFパーサ開始 ===」が表示されればCtrl+Cでキャンセルしてください
+
+
+## 注意事項
+外部ライブラリを使用する場合は、必ず `requirements.txt` にライブラリ名とバージョンを明記してください。
+仮想環境で実行した際に「ModuleNotFoundError: No module named '...'」や "~ not found" のようなエラーが発生することがあります。エラーが出た場合は、該当するライブラリとバージョンを `requirements.txt` に追記してからDockerを再起動してください。
 ## ライセンス
 MIT
