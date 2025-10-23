@@ -1,0 +1,17 @@
+services:
+  python:
+    # Dockerfileの位置を指定   
+    build: .
+    # ホストのディレクトリをコンテナ内にマウント(共有)する
+    volumes:
+      - ./app:/app
+    # ポートフォワーディングの設定 ホストとコンテナのポートを紐づける
+    ports:
+      - "8888:8000"
+    # .env から環境変数を読み込む（Supabase などの秘密情報は .env に置く）
+    env_file:
+      - .env
+    # 環境変数の設定 
+    environment:
+      - PYTHONUNBUFFERED=1
+      - UVICORN_RELOAD=true

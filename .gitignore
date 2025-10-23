@@ -1,0 +1,67 @@
+# Local environment files
+.env
+# すべての .env* を無視しつつ、テンプレートは許可
+.env.*
+!.env.example
+
+# Python cache
+__pycache__/
+*.py[cod]
+*.pyo
+.cache/
+.ruff_cache/
+.mypy_cache/
+.pytest_cache/
+.pyrightcache/
+.pyre/
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+env/
+
+# macOS
+.DS_Store
+
+# Excel artifacts (optional)
+*.xlsx
+~$*.xlsx
+
+# Logs & temp
+*.log
+logs/
+tmp/
+*.tmp
+
+# Packaging / build artifacts
+build/
+dist/
+eggs/
+.eggs/
+*.egg-info/
+wheels/
+pip-wheel-metadata/
+
+# Coverage / test reports
+.coverage
+.coverage.*
+coverage.xml
+htmlcov/
+nosetests.xml
+junit*.xml
+
+# Tox / Nox
+.tox/
+.nox/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Editors/IDE
+.vscode/
+.idea/
+.history/
+
+# Node (念のため)
+node_modules/
