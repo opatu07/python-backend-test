@@ -17,12 +17,16 @@ Docker + FastAPI + Supabaseの環境構築が行えたかを確認できます�
 1. **リポジトリをクローン**
    ```bash
    git clone https://github.com/opatu07/python-backend-test.git
+   ```
+   ```
    cd python-test
    ```
 
 2. **Docker環境の構築・起動**
    ```bash
    docker compose build
+   ```
+   ```
    docker compose up -d
    ```
 
@@ -42,10 +46,12 @@ Docker + FastAPI + Supabaseの環境構築が行えたかを確認できます�
 を確認してください。
 
 4. **環境変数（Supabase）の設定**
+   #### エディタで .env を開き、自分の SUPABASE_URL / SUPABASE_ANON_KEY を設定 
+   #### 必要なら SUPABASE_TEST_TABLE も指定
    ```bash
    cp .env.example .env
-   # エディタで .env を開き、自分の SUPABASE_URL / SUPABASE_ANON_KEY を設定
-   # 必要なら SUPABASE_TEST_TABLE も指定
+   ```
+   ```
    docker compose restart python
    ```
 
@@ -63,9 +69,8 @@ Docker + FastAPI + Supabaseの環境構築が行えたかを確認できます�
 7. **`backend.py` の動作確認（Docker コンテナ内）**
 
    コンテナ環境で確認する場合の手順です。コンテナに入ってから `requirements.txt` をインストール済みであることを確認し、`backend.py` を実行します。
-
+   #### backend.pyを実行
    ```bash
-   # backend.pyを実行
    python backend.py
    ```
 
