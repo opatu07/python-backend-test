@@ -65,14 +65,8 @@ Docker + FastAPI + Supabaseの環境構築が行えたかを確認できます�
    コンテナ環境で確認する場合の手順です。コンテナに入ってから `requirements.txt` をインストール済みであることを確認し、`backend.py` を実行します。
 
    ```bash
-   # コンテナに入る
-   docker compose exec python bash
-
-   # backend.py があるか確認
-   ls 
-
    # backend.pyを実行
-   python3 backend.py
+   python backend.py
    ```
 
 注意1: `backend.py` は実行時のカレントディレクトリに依存して `oct.pdf` を探します。PDF の場所が異なる場合は `backend.py` 内の `INPUT_PDF` を適切に修正してください。
